@@ -6,6 +6,7 @@ This app keeps a simple text file of your web history.
 Download the directory tree and run the node server to handle web history logging requests.
 
 cd history
+
 npm start
 
 You can configure the node server to run on startup using pm2 or other methods.
