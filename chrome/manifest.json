@@ -1,0 +1,23 @@
+{
+  "name": "Web History Log",
+  "description": "",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["main.js"],
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "bg_page.js"
+  },
+  "host_permissions": [ "http://localhost:3000/*" ]
+}
