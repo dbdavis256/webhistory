@@ -15,5 +15,6 @@ If you use pm2 make sure the node package is running when you call "pm2 save".
 Install the chrome extension in /chrome to begin logging your traffic.
 The pages you visit will be appended to history.txt in the history folder.
 Add your time zone to history/server.js
+The extension uses a server worker to bypass CORS
 
 How to install an unpacked extension: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
