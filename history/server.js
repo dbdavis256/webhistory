@@ -2,7 +2,7 @@ import http from "http";
 import * as fs from 'fs';
 import { formatInTimeZone } from 'date-fns-tz';
 
-const filename = '/Users/daviddavis/history/history.txt';
+const filename = './history.txt';
 const timeZone = 'America/Chicago';
 
 const server = http.createServer((req, res) => {
