@@ -12,6 +12,6 @@ npm start
 You can configure the node server to run on startup using pm2 or other methods.
 If you use pm2 make sure the node package is running when you call "pm2 save".
 
-Install the chrome extension in the chrome folder to begin logging your traffic.
+Install the chrome extension in /chrome to begin logging your traffic.
 The pages you visit will be appended to history.txt in the history folder.
 Add your time zone to history/server.js
