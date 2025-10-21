@@ -1,7 +1,7 @@
 Why is your web history missing data?  Many pages are an SPA (Single Page Application)
 that can update the address bar and render new content without reloading.
 There may be other reasons.
-This app keeps a simple text file of your web history when the page title changes.  
+This app keeps a simple text file of your web history when the page title or address bar changes.  
 
 Download the directory tree and run the node server to handle web history logging requests.
 
