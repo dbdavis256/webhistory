@@ -11,11 +11,16 @@ const server = http.createServer((req, res) => {
   res.end("Hello World\n");
   const requestUrl = new URL(req.url, `http://${req.headers.host}`);
   const timeStamp = formatInTimeZone(new Date(), timeZone, 'yyyy-MM-dd HH:mm:ssXXX');
-  const line = timeStamp + ' ' + requestUrl.searchParams.get('u') + '\n';
+  const line = timeStamp + ' ' + requestUrl.searchParams.get('u') + ' "' + requestUrl.searchParams.get('t') + '"\n';
   fs.appendFile(filename, line, (err) => {
     if (err) {
       console.error('Error writing file:', err);
       return;
     }
   });
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
 });
