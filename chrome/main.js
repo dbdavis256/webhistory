@@ -1,27 +1,25 @@
 function logHistory() {
-  chrome.runtime.sendMessage({ currentUrl: encodeURIComponent(window.location.href) }, (response) => {
+  chrome.runtime.sendMessage({ currentUrl: encodeURIComponent(window.location.href), currentTitle: encodeURIComponent(document.title) }, (response) => {
     console.log("Response from service worker:");
   });
 }
 
 let pageTitle = document.title;
+let currentUrl = window.location.href;
 logHistory();
 
 const observer = new MutationObserver((mutations) => {
-  for (const mutation of mutations) {
-    for (const node of mutation.addedNodes) {
-      if (node instanceof Element && document.title != pageTitle) {
-        logHistory();
-        pageTitle = document.title;
-      }
-    }
+  if (document.title != pageTitle || window.location.href != currentUrl) {
+    logHistory();
+    pageTitle = document.title;
+    currentUrl = window.location.href;
   }
 });
 
-// A SPA (Single Page Application) can
+// https://developer.chrome.com/ is a SPA (Single Page Application) so can
 // update the address bar and render new content without reloading. Our content
 // script won't be reinjected when this happens, so we need to watch for
 // changes to the content.
 var container = document.body;
-var config = { attributes: true, childList: true, characterData: true };
+var config = { attributes: true, childList: true, subtree: true, characterData: true };
 observer.observe(container, config);
