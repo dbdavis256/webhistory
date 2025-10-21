@@ -1,3 +1,4 @@
+// send the url and title to bg_page.js on load and soft history updates
 function logHistory() {
   chrome.runtime.sendMessage({ currentUrl: encodeURIComponent(window.location.href), currentTitle: encodeURIComponent(document.title) }, (response) => {
     console.log("Response from service worker:");
