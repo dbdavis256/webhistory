@@ -18,3 +18,6 @@ Add your time zone to history/server.js
 The extension uses a server worker to bypass CORS
 
 How to install an unpacked extension: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
+
+you can monitor history.txt with macOS using tail and the formatter script I created.
+"tail -f history.txt | node formatlog.js"
