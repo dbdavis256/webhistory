@@ -16,10 +16,9 @@ const observer = new MutationObserver((mutations) => {
   }
 });
 
-// https://developer.chrome.com/ is a SPA (Single Page Application) so can
-// update the address bar and render new content without reloading. Our content
-// script won't be reinjected when this happens, so we need to watch for
-// changes to the content.
+// An SPA (Single Page Application) can update the address bar and render new content 
+// without reloading. Our content script won't be reinjected when this happens, 
+// so we need to watch for changes to the content.
 var container = document.body;
 var config = { attributes: true, childList: true, subtree: true, characterData: true };
 observer.observe(container, config);
