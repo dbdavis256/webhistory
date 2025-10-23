@@ -17,6 +17,8 @@ The pages you visit will be appended to history.txt in the history folder.
 Add your time zone to history/server.js
 The extension uses a server worker to bypass CORS
 
+The safari extension must be signed.  This guide helped me: https://stackoverflow.com/questions/62748163/how-can-i-sign-a-safari-extension-for-just-one-computer
+
 How to install an unpacked extension: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
 
 you can monitor history.txt with macOS using tail and the formatter script I created.
