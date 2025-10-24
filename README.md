@@ -18,6 +18,8 @@ Add your time zone to history/server.js
 The extension uses a server worker to bypass CORS
 How to install a chrome unpacked extension: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world
 
+The chrome extension works directly on the new chatgpt atlas browser. (worth a try)
+
 The safari extension in /safari must be signed.  This guide helped me: https://stackoverflow.com/questions/62748163/how-can-i-sign-a-safari-extension-for-just-one-computer
 
 you can monitor history.txt with macOS using tail and the formatter script I created.
